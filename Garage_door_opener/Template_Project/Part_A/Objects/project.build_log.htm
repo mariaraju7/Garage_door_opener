@@ -1,0 +1,102 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Pablo Landriz, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\mariaraju\Downloads\Final Lab 3\Template_Project\Part_A\project.uvprojx
+Project File Date:  06/10/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling SysClock.c...
+compiling SysTimer.c...
+src/main.c(38): warning: use of bitwise '|' with boolean operands [-Wbitwise-instead-of-logical]
+   38 |                         if ((strcmp("y", x)==0 | (strcmp("Y", x))==0))
+      |                             ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                ||
+src/main.c(38): note: cast one or both operands to int to silence this warning
+src/main.c(43): warning: use of bitwise '|' with boolean operands [-Wbitwise-instead-of-logical]
+   43 |                         else if ((strcmp("n", x)==0 | (strcmp("N", x))==0))
+      |                                  ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     ||
+src/main.c(43): note: cast one or both operands to int to silence this warning
+src/main.c(48): warning: use of bitwise '|' with boolean operands [-Wbitwise-instead-of-logical]
+   48 |                         else if ((strcmp("s", x)==0 | (strcmp("S", x))==0)){
+      |                                  ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     ||
+src/main.c(48): note: cast one or both operands to int to silence this warning
+src/main.c(19): warning: unused variable 'ch' [-Wunused-variable]
+   19 |         char ch;
+      |              ^~
+4 warnings generated.
+compiling main.c...
+src/motor.c(49): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   49 |         GPIOC->ODR |= HalfStep[step];
+      |                       ^~~~~~~~
+1 warning generated.
+compiling motor.c...
+src/UART.c(129): warning: comparison of integers of different signs: 'int' and 'uint32_t' (aka 'unsigned int') [-Wsign-compare]
+  129 |         for (i = 0; i < nBytes; i++) {
+      |                     ~ ^ ~~~~~~
+src/UART.c(132): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  132 |                 USARTx->TDR = buffer[i] & 0xFF;
+      |                               ^~~~~~
+2 warnings generated.
+compiling UART.c...
+src/UART_printf.c(14): warning: unused parameter 'f' [-Wunused-parameter]
+   14 | int fputc(int ch, FILE *f) { 
+      |                         ^
+src/UART_printf.c(23): warning: unused parameter 'f' [-Wunused-parameter]
+   23 | int fgetc(FILE *f) {  
+      |                 ^
+2 warnings generated.
+compiling UART_printf.c...
+linking...
+Program Size: Code=16656 RO-data=1116 RW-data=0 ZI-data=1816  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 9 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32L4xx_DFP.2.7.0.pack
+                Keil::STM32L4xx_DFP@2.7.0
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Keil_v5/ARM/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Keil_v5/ARM/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
